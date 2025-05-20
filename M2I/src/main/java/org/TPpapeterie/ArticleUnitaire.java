@@ -1,6 +1,7 @@
 package org.example.TPpapeterie;
 
-public class ArticleUnitaire extends Articles{
+public class
+ArticleUnitaire extends Articles{
 private String nom;
 private double prixUnitaire;
 
