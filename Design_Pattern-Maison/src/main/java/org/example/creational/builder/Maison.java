@@ -1,4 +1,4 @@
-package org.example.creational.builder;
+package org.example.Design_Pattern.src.main.java.org.example.creational.builder;
 
 public class Maison {
 
@@ -75,7 +75,7 @@ public class Maison {
         private String couleur;
     }
 
-    public Maison Maison(double superficie){
+    public Maison superficie(double superficie){
         this.superficie = superficie;
         return this;
     }
@@ -103,9 +103,6 @@ public class Maison {
 
 
 
-    public Maison build(){
-        return new Maison(this);
-    }
 
 }
 

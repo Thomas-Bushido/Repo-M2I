@@ -6,7 +6,7 @@ private String nom;
 private double prixUnitaire;
 
     public ArticleUnitaire(String uniqueRef, String nom, double prixUnitaire) {
-        super(uniqueRef);
+        /*super(uniqueRef);*/
         this.nom = nom;
         this.prixUnitaire = prixUnitaire;
     }
