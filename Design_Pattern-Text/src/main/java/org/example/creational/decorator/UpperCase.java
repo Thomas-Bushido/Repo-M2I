@@ -15,6 +15,7 @@ public class UpperCase implements Text{
         this.words = words;
     }
 
+
     @Override
     public String text() {
         return this.words.toUpperCase();
