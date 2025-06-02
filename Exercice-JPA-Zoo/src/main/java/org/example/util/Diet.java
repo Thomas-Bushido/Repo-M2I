@@ -1,11 +1,10 @@
 package org.example.util;
-import org.example.model.Animal;
 import org.example.service.AnimalService;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class Consoleihm {
+public class Diet {
     private static AnimalService animalService = new AnimalService();
     private static Scanner scanner = new Scanner(System.in);
 

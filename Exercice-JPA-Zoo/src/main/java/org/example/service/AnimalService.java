@@ -1,7 +1,7 @@
 package org.example.service;
 
 import org.example.dao.AnimalDao;
-import org.example.model.Animal;
+import org.example.Animal;
 import org.example.util.DatabaseManager;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

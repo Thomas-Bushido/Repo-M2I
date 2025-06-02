@@ -1,6 +1,6 @@
 package org.example.dao;
 
-import org.example.model.Animal;
+import org.example.Animal;
 
 import java.sql.Connection;
 import java.sql.SQLException;
