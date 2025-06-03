@@ -1,8 +1,6 @@
 package org.example;
 
 import org.example.dao.ProductDAO;
-import org.example.dao.Product_ElectronicDAO;
-import org.example.entity.Product_Electronic;
 import org.example.entity.Product_housing;
 
 public class Main {
@@ -13,6 +11,6 @@ public class Main {
         // productDAO.save(prodElec1);
         Product_housing prodHousing = Product_housing.builder().nom("Tec").price(115).width(52.55).height(26.22).build();
         productDAO.save(prodHousing);
-        
+
     }
 }
