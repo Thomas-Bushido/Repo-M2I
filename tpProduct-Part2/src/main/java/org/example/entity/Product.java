@@ -5,14 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.awt.*;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -44,4 +44,12 @@ public class Product {
         java.sql.Date sqlDate = new java.sql.Date(purchaseDate.getTime());
         return sqlDate;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "idImage")
+    private Image image;
+
+    @OneToMany(mappedBy = "product",fetch = FetchType.EAGER)
+    private List<Comment> comment;
+
 }

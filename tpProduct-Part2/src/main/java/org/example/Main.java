@@ -1,13 +1,19 @@
 package org.example;
 
 import net.bytebuddy.asm.Advice;
+import org.example.dao.BaseDAO;
+import org.example.dao.CommentDAO;
+import org.example.dao.ImageDAO;
 import org.example.dao.ProductDAO;
+import org.example.entity.Comment;
+import org.example.entity.Image;
 import org.example.entity.Product;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static org.example.entity.Product.sqlDate;
@@ -17,8 +23,42 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         ProductDAO productDAO = new ProductDAO();
+        ImageDAO imageDAO = new ImageDAO();
+        CommentDAO commentDAO = new CommentDAO();
 
-        //1. Afficher la liste des produits commandés entre deux dates lus au clavier.
+        Comment commentEdit = commentDAO.get(1);
+        commentEdit.setProduct(productDAO.get(40));
+        commentDAO.save(commentEdit);
+        System.out.println(productDAO.get(40));
+
+    }
+}
+
+/*
+        Image image1 = Image.builder().url("www.123.fr").build();
+        Image image2 = Image.builder().url("www.456.fr").build();
+        Image image3 = Image.builder().url("www.789.fr").build();
+        Image image4 = Image.builder().url("www.101112.fr").build();
+        Image image5 = Image.builder().url("www.131415.fr").build();
+
+        List<Image> images = List.of(image1,image2,image3,image4,image5);
+
+        for(Image i: images){
+            imageDAO.save(i);
+        }
+        Comment comment1 = Comment.builder().content("Comment 1").note("klcdnjlkjcnlkjcncd").commentDate(sqlDate("1950-10-21")).build();
+        Comment comment2 = Comment.builder().content("Comment 2").note("kzexqvbrtt").commentDate(sqlDate("1983-01-28")).build();
+        Comment comment3 = Comment.builder().content("Comment 3").note("cnlkjcncd").commentDate(sqlDate("2020-10-13")).build();
+        Comment comment4 = Comment.builder().content("Comment 4").note("klcdnjhksvizlkc,zccd").commentDate(sqlDate("2010-10-25")).build();
+        Comment comment5 = Comment.builder().content("Comment 5").note("k").commentDate(sqlDate("2005-05-02")).build();
+        List<Comment> comments = List.of(comment1,comment2,comment3,comment4,comment5);
+
+        for(Comment i: comments){
+            commentDAO.save(i);
+        }
+*/
+
+//1. Afficher la liste des produits commandés entre deux dates lus au clavier.
         /*
         System.out.println("Liste des produits commandés entre deux dates: ");
         System.out.println("Saisissez la date 1: ");
@@ -29,7 +69,7 @@ public class Main {
         System.out.println(productDAO.dateBetween(date1, date2));
         */
 
-        //2. retourner les numéros et reference des articles dont le stock est inférieur à une valeur lue au clavier.
+//2. retourner les numéros et reference des articles dont le stock est inférieur à une valeur lue au clavier.
         /*
         System.out.println("Liste des produits recherchés en fonction du stock: ");
         System.out.println("Saisissez la valeur maximum du stock: ");
@@ -38,18 +78,22 @@ public class Main {
         System.out.println(productDAO.stockUnderValue(st));
         */
 
-        // 1. Afficher la valeur du stock des produits d'une marque choisie
+// 1. Afficher la valeur du stock des produits d'une marque choisie
+        /*
         System.out.println("Saisissez la marque du stock recherché: ");
         String mq = scanner.nextLine();
         System.out.println("Stock: ");
-        System.out.println(productDAO.stockBrand(mq));
-
-        // 2. Calculer le prix moyen des produits.
+        List<Object[]> List = productDAO.stockBrand(mq);
+        for (Object[] o : List) {
+            System.out.println(o[0] + " " + o[1]);
+        }
+*/
+// 2. Calculer le prix moyen des produits.
+/*
         System.out.println("prix moyen: ");
         System.out.println(productDAO.avgPrice());
+*/
 
-    }
-}
 
 /*
 
