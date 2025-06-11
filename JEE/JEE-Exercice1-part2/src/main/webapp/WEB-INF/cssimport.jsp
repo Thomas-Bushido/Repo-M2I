@@ -2,18 +2,9 @@
   Created by IntelliJ IDEA.
   User: Administrateur
   Date: 10/06/2025
-  Time: 15:32
+  Time: 16:09
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<html>
-<head>
-
-    <title>Title2</title>
-  <% Include file ="WEB-INF/" %>
-</head>
-<body>
-
-</body>
-</html>
+<link rel="stylesheet" href="${pageContext
+}../style/style.css">
