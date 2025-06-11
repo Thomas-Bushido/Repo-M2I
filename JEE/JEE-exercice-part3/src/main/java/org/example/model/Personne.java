@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "personne", value = "/personne")
+@WebServlet(value = "/personne-Servlet")
 public class Personne extends HttpServlet {
 
     public String prenom;
