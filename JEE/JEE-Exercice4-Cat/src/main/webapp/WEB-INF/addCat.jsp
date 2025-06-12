@@ -1,3 +1,5 @@
+
+<%@ page import="org.example.jeeexercice4cat.controller.FormServlet" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrateur

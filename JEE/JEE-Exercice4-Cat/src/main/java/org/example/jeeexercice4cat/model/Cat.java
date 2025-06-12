@@ -1,4 +1,4 @@
-package org.example.exercice3.model;
+package org.example.jeeexercice4cat.model;
 
 public class Cat {
 

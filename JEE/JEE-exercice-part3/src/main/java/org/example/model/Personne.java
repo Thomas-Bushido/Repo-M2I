@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 
 import jakarta.servlet.ServletException;
@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(value = "/personne-Servlet")
-public class Personne extends HttpServlet {
+public class Personne {
 
-    public String prenom;
-    public String nom;
-    public int age;
-    public List<Personne> personnes;
+    private String prenom;
+    private String nom;
+    private int age;
+
 
     public Personne(String prenom, String nom, int age) {
         this.prenom = prenom;
@@ -25,22 +25,27 @@ public class Personne extends HttpServlet {
         this.age = age;
     }
 
-
-    @Override
-    public void init() throws ServletException {
-        personnes = new ArrayList<>();
-        personnes.add(new Personne("John","Doe",15));
-        personnes.add(new Personne("Bill","Bob",55));
-        personnes.add(new Personne("James","Dunn",45));
-        personnes.add(new Personne("Joel","Bim",22));
-
+    public String getPrenom() {
+        return prenom;
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-        req.setAttribute("personnes",personnes);
+    public String getNom() {
+        return nom;
+    }
 
-        req.getRequestDispatcher("/list.jsp").forward(req,resp);
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
