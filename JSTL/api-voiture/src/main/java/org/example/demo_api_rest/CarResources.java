@@ -4,7 +4,6 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/car")
@@ -16,22 +15,23 @@ public class CarResources {
     public CarResources(CarService carService){
         this.carService = carService;
     }
+
     @GET
-    @Path("/carlist")
+    @Path("/createcars")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Car> getAll(){
-        return new ArrayList<>();
+    public List<Car> createCars(){
+        return carService.carsAdd(1,"X","1999", "color");
     }
 
 
-
+/*
     @GET
     @Path("/carbyid")
     @Produces(MediaType.APPLICATION_JSON)
-    public Car getCarById(int id){
+    public Car getId(int id){
         return carService.get(id);
     }
-
+*/
     @DELETE
     @Path("/delete{id}")
     public int delete(@PathParam("id") int id){
