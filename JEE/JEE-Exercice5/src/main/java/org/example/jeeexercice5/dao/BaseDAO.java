@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.zip.CheckedOutputStream;
 
-public abstract class BaseDAO<T> {
+public abstract class
+
+BaseDAO<T> {
     protected SessionFactory sessionFactory;
     protected Class<T> type;
     protected Session session;
