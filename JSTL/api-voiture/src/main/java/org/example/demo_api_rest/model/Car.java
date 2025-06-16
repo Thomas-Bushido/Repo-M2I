@@ -1,23 +1,26 @@
-package org.example.demo_api_rest;
+package org.example.demo_api_rest.model;
 
 public class Car {
-    public int id;
+    public long id;
     public String brand;
     public String year;
     public String color;
+    public Car(){
 
-    public Car(int id, String brand, String year, String color) {
+    }
+
+    public Car(long id, String brand, String year, String color) {
         this.id = id;
         this.brand = brand;
         this.year = year;
         this.color = color;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
