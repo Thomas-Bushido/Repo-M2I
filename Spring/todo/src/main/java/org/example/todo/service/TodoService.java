@@ -1,36 +1,31 @@
 package org.example.todo.service;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.example.todo.model.Todo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-@Builder
 @Service
 public class TodoService {
-    public String name;
-    public String description;
-    public boolean isDone;
 
-    private List<TodoService> todoServiceList;
 
-    public TodoService(String name, String description, boolean isDone) {
-        this.name = name;
-        this.description = description;
-        this.isDone = isDone;
+    private ArrayList<Todo> todos =new ArrayList<>();
+
+
+    public TodoService() {
+       this.todos.add(new Todo("td1", "description", true));
+        this.todos.add(new Todo("td2", "description", true));
+        this.todos.add(new Todo("td3", "description", true));
     }
 
-    public List<TodoService> createTodo(String name, String description, boolean isDone){
 
-        todoServiceList.add(new TodoService(name, description, isDone));
-        return todoServiceList;
 
     }
 
 
-}

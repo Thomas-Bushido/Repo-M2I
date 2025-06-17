@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>toutes les todos</title>
+</head>
+<body>
+<h1>Liste vide</h1>
+<p th:if="${todos.isEmpty}"></p>
+
+<ul th:unless="t :${todos.isEmpty()}">
+<li th:unless="t :${todos}"><span></span></li>
+</ul>
+</body>
+</html>
