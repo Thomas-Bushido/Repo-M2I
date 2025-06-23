@@ -5,10 +5,11 @@
     <title>List</title>
 </head>
 <body>
-<h1>Listes des contacts</h1>
+<nav>
+    <a th:href="@{/addform}">Formulaire</a>
+    <a th:href="@{/listcontacts}">Liste</a>
+    <a th:href="@{/}">Accueil</a>
+</nav>
 
-<ul>
-    <li th:each="contact : ${contacts}" th:text="${contact.getFirstname()}"></li>
-</ul>
 </body>
 </html>

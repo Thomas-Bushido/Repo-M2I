@@ -2,11 +2,13 @@ package org.example.mise_en_bdd.service;
 
 import org.example.mise_en_bdd.dao.ContactRepository;
 import org.example.mise_en_bdd.entity.Contact;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Primary
 @Service
 public class ContactService {
 
@@ -16,10 +18,14 @@ public class ContactService {
         this.contactRepository = contactRepository;
     }
 
-    public Contact save(Contact contact){
+
+    public Contact createContact(Contact contact) {
         return contactRepository.save(contact);
     }
 
+    public List<Contact> getAllContacts() {
+        return contactRepository.findAll();
+    }
     public Contact update(Contact contact){
         return contactRepository.save(contact);
     }

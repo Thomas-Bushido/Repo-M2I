@@ -5,7 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Contact ajouté avec succées !!!</h1>
+<h1>Listes des contacts</h1>
+
+<ul>
+    <li th:each="contact : ${contacts}" th:text="${contact.getFirstname()}"></li>
+</ul>
 
 </body>
 </html>
