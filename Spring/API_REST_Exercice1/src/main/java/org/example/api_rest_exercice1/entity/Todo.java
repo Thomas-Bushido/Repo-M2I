@@ -32,6 +32,10 @@ public class Todo {
                 .titre(getTitre())
                 .date(getDate())
                 .description(getDescription())
+                .isValidate(isValidate())
                 .build();
     }
-}
+
+    }
+
+

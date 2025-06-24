@@ -17,7 +17,7 @@ public class TodoReceiveDto {
     private String titre;
     private String description;
     private String date;
-    private boolean isValidate;
+    private String isValidate;
 
     public Todo dtoToEntity (){
 
@@ -25,7 +25,7 @@ public class TodoReceiveDto {
                 .titre(getTitre())
                 .date(getDate())
                 .description(getDescription())
-                .isValidate(false)
+                .isValidate(Boolean.parseBoolean(getIsValidate()))
                 .build();
     }
 }

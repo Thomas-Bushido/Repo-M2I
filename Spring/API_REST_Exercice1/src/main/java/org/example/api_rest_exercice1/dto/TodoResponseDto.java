@@ -15,4 +15,5 @@ public class TodoResponseDto {
     private String titre;
     private String date;
     private String description;
+    private boolean isValidate;
 }
