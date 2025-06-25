@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.api_rest_exercice2.model.Director;
 
 import java.util.UUID;
 @NoArgsConstructor
@@ -17,4 +18,5 @@ public class MovResponseDto {
     private String description;
     private double duration;
     private String type;
+    private Director director;
 }

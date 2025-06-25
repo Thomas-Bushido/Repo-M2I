@@ -26,21 +26,11 @@ public class DirectorService {
     public List<DirResponseDto> get() {
         return dirRepo.findAll().stream().map(Director::modelToDto).toList();
     }
-
 /*
-    public void delete(UUID id) {
-
+    public Director getById(Long id) {
+        return dirRepo.stream().filter(category -> category.getId().equals(id)).findFirst().orElse(null);
     }
+*/
 
-
-    public Director getById(UUID id) {
-        return null;
-    }
-
-
-    public Director update(UUID id, Director entity) {
-        return null;
-    }
-    */
 
 }

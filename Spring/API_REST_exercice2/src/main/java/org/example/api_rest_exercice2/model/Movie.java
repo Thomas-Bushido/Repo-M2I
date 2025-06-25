@@ -15,7 +15,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 public class Movie {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,10 +33,12 @@ public class Movie {
  public MovResponseDto modelToDto (){
   return MovResponseDto.builder()
           .idMov(getIdMov())
+          .name(getName())
           .upcomingDate(getUpcomingDate())
           .description(getDescription())
           .duration(getDuration())
           .type(getType())
+          .director(getDirector())
           .build();
  }
 

@@ -27,4 +27,10 @@ public class MovieController {
     @GetMapping
     public ResponseEntity<List<MovResponseDto>> getAll () {return ResponseEntity.ok(service.get());}
 
+    @GetMapping("/{id}")
+    public ResponseEntity<MovResponseDto> getOneMovie (@PathVariable long id) {
+        return ResponseEntity.ok(service.getById(id));
+
+    }
+
 }

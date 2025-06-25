@@ -24,8 +24,7 @@ public class Director {
     private String lastName;
     private String birthDate;
 
-    @OneToMany(mappedBy = "director")
-    private List<Movie> movie;
+
 
     public DirResponseDto  modelToDto (){
         return DirResponseDto.builder()
