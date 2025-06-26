@@ -36,6 +36,7 @@ public class ProdSessionController {
             panId = new ArrayList<>();
         }
 
+
         panId.add(service.getById(id).getId());
 
         session.setAttribute("panier",panId);
