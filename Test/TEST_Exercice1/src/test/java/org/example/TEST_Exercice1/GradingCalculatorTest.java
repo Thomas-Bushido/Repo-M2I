@@ -19,5 +19,40 @@ public class GradingCalculatorTest {
            Assert.assertEquals("A", result);
        }
 
-       
+       @Test
+    public void when_return_B(){
+           //Arrange
+           gradingCalculator = new GradingCalculator(81,61);
+
+           //Act
+           double result = gradingCalculator.getGrade();
+
+           //Assert
+           Assert.assertEquals("B", result);
+       }
+
+    @Test
+    public void when_return_C(){
+        //Arrange
+        gradingCalculator = new GradingCalculator(61,61);
+
+        //Act
+        double result = gradingCalculator.getGrade();
+
+        //Assert
+        Assert.assertEquals("C", result);
+    }
+
+    @Test
+    public void when_return_F(){
+        //Arrange
+        gradingCalculator = new GradingCalculator(59,59);
+
+        //Act
+        double result = gradingCalculator.getGrade();
+
+        //Assert
+        Assert.assertEquals("F", result);
+    }
+
 }
