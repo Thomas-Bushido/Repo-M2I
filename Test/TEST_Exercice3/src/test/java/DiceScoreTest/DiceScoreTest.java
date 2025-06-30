@@ -17,9 +17,7 @@ public class DiceScoreTest {
     public void WhenScoreFirstEqualScoreSecond(){
         //Arrange
         dicescore = new DiceScore(de);
-        int scoreFirst = 5;
-        int scoreSecond = 5;
-        Mockito.mock(de);
+        Mockito.when(de.getRoll()).thenReturn(20).thenReturn(30);
 
         //Act
         int result = dicescore.getScore();
