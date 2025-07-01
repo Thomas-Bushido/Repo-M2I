@@ -11,7 +11,7 @@ import java.util.List;
 public class VilleTest {
 
     private Ville ville;
-/*
+
     @Test
     public void When_name_ismatching(){
         // Arrange
@@ -23,17 +23,18 @@ public class VilleTest {
         // Assert
         Assertions.assertEquals(expected, result);
     }
-*/
+
     @Test
     public void When_name_isnot_matching(){
         // Arrange
-        String expected = "Budapest";
+        String expected = "AP";
         System.out.println("Début d'un test");
         Ville ville = new Ville();
-        // Act
-        String result = ville.search(expected);
-        // Assert
-        Assertions.assertEquals(expected, result);
+        // Act // Assert
+        Assertions.assertThrows(
+                NotFoundException.class,()->
+                ville.search(expected)
+                );
     }
 
 }

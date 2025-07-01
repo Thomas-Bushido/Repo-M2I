@@ -8,10 +8,6 @@ public class Ville {
     private String nom;
 
 
-    public Ville() {
-        this.nom = nom;
-    }
-
     public String getNom() {
         return nom;
     }
@@ -28,16 +24,15 @@ public class Ville {
         villes.add("Skopje");
         villes.add("Rotterdam");
 
+
         for (String ville : villes) {
-            if (Objects.equals(ville, nom)) {
+
+            if (nom.length()<=2) {
+                return "Une exception est levée de type NotFoundException";
+            }
+            if (Objects.equals(ville.toLowerCase(), nom.toLowerCase()) || ville.contains(nom.toLowerCase())){
                 return ville;
             }
-            /*else if (nom.length()<=2) {
-                return "Une exception est levée de type NotFoundException";
-            } else {
-                return villes.toString();
-            }
-            */
 
         }
         return "pas de ville trouvée";
