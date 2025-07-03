@@ -23,34 +23,35 @@ public class CommandeController {
         commande.setId(id);
         commande.setReference("XUV516");
         Client client = restTemplate.getForObject(
-                "http://localhost:8080/client/{id}",
+                "http://localhost:8081/client/{id}",
                 Client.class,
                 id
         );
         commande.setClient(client);
-        /*
+
         Produit produit = restTemplate.getForObject(
-                "http://localhost:8080/produit/{id}",
+                "http://localhost:8082/produit/{id}",
                 Produit.class,
                 id
         );
         commande.setProduit(produit);
-        */
+
 
         return commande;
     }
-/*
+
+    
     @GetMapping("/detail/{id}")
     public Commande getOrder(@PathVariable int id){
         Commande commande= new Commande();
         commande.setId(id);
         commande.setReference("XUV516");
-        RestClient<Client> clientRestClient = new RestClient<>("http://localhost:8080/client/7");
+        RestClient<Client> clientRestClient = new RestClient<>("http://localhost:8081/client/7");
         Client client = clientRestClient.get(Client.class);
         commande.setClient(client);
 
         return commande;
     }
-    */
+
 
 }
