@@ -11,7 +11,7 @@ services:
       - MYSQL_DATABASE=demo_spring_data
     volumes:
       - ex9_volume:/var/lib/mysql
-      - ./script.sql:/docker-entrypoint-initdb.d/script.sql
+      
     networks:
       - sql_network
 
@@ -31,6 +31,7 @@ services:
 
   programm:
      build: .
+     restart: always
      container_name: app_bdd 
      ports:
       - "8080:8080"
