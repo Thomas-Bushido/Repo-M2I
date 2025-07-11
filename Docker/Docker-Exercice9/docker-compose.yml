@@ -31,7 +31,7 @@ services:
 
   programm:
      build: .
-     container_name: app-bdd 
+     container_name: app_bdd 
      ports:
       - "8080:8080"
      depends_on:
