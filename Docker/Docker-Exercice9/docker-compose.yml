@@ -1,0 +1,46 @@
+
+services:
+  # service BDD mysql
+  db:
+    image: mysql
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=demo_spring_data
+    volumes:
+      - ex9_volume:/var/lib/mysql
+      - ./script.sql:/docker-entrypoint-initdb.d/script.sql
+    networks:
+      - sql_network
+
+  # service phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=db
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    networks:
+      - sql_network
+
+  programm:
+     build: .
+     container_name: app-bdd 
+     ports:
+      - "8080:8080"
+     depends_on:
+      - db
+     networks:
+      - sql_network
+
+volumes:
+  ex9_volume:
+
+networks:
+  sql_network:
