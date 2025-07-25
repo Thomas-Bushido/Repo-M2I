@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <section>
+    <h1>Ajouter un auteur</h1>
+    <form id="authorForm">
+        <input type="text" name="name" placeholder="Nom de l'auteur" required />
+        <br><br>
+        <input type="text" name="birthDate" placeholder="Date de naissance"/>
+        <br><br>
+        <select name="genre" required>
+          <option value="">-- Choisissez le genre de l'auteur --</option>
+          <option value="Romance">Romance</option>
+          <option value="Thriller">Thriller</option>
+          <option value="SF">Science Fiction</option>
+        </select>
+        <br><br>
+        <button type="submit">Ajouter un auteur</button>
+
+    </form>
+
+    <h1>Ajouter un livre</h1>
+    <form id="bookForm">
+        <input type="text" name="title" placeholder="Titre du livre" required />
+        <br><br>
+        <input type="text" name="author" placeholder="Auteur du livre"/>
+        <br><br>
+        <select name="genre" required>
+          <option value="">-- Choisissez le genre du livre --</option>
+          <option value="Romance">Romance</option>
+          <option value="Thriller">Thriller</option>
+          <option value="SF">Science Fiction</option>
+        </select>
+        <br><br>
+        <button type="submit">Ajouter un livre</button>
+
+    </form>
+
+</section>
+
+</body>
+<script type="module" src="./js/main.js"></script>
+</html>
